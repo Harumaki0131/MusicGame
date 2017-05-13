@@ -2,16 +2,18 @@
 //  AppDelegate.swift
 //  Musicgame
 //
-//  Created by EriyaMurakami on 2016/10/22.
+//  Created by EriyaMurakami on 2016/06/25.
 //  Copyright © 2016年 EriyaMurakami. All rights reserved.
 //
 
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var scoreTotal: Int! = 0
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
