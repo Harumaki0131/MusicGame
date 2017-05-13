@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
-//  ぬっきぃのMusicgame
+//  2ViewController.swift
+//  Musicgame
 //
-//  Created by EriyaMurakami on 2016/06/25.
+//  Created by EriyaMurakami on 2016/08/04.
 //  Copyright © 2016年 EriyaMurakami. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import AVFoundation
 
 import EZAudio
 
-class ViewController1: UIViewController {
+class ViewController2: UIViewController {
     
     
     

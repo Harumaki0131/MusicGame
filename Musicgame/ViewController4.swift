@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
-//  ぬっきぃのMusicgame
+//  ViewController４.swift
+//  Musicgame
 //
-//  Created by EriyaMurakami on 2016/06/25.
+//  Created by EriyaMurakami on 2016/11/02.
 //  Copyright © 2016年 EriyaMurakami. All rights reserved.
 //
 
@@ -11,8 +11,8 @@ import AVFoundation
 
 import EZAudio
 
-class ViewController1: UIViewController {
-    
+class ViewController4: UIViewController,EZAudioFileDelegate, EZAudioFFTDelegate ,/*EZMicrophoneDelegate,*/EZAudioPlayerDelegate {
+
     
     
     
@@ -39,13 +39,30 @@ class ViewController1: UIViewController {
     @IBOutlet weak var lowerrightButton: UIButton!
     @IBOutlet weak var lowerleftButton: UIButton!
     @IBOutlet weak var centerButton: UIButton!
+    @IBOutlet weak var centerButton2: UIButton!
     override func makeTextWritingDirectionLeftToRight(sender: AnyObject?) {
         
     }
+//    @IBOutlet var audioPlot:EZAudioPlot!
+    
+    @IBOutlet var audioPlotFreq:EZAudioPlot!
+    
+    @IBOutlet var audioPlotTime:EZAudioPlot!
+
     var delegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
     
     var audio:AVAudioPlayer!
     
+    var ezAudioFFT:EZAudioFFT!
+    
+    var audioFile:EZAudioFile!
+    
+    
+    var fft:EZAudioFFTRolling!
+    
+    let FFTViewControllerFFTWindowSize:vDSP_Length = 4096;
+    
+     var audioPlayer:EZAudioPlayer!
     
     var speed: CGFloat = 10.0
     var speed2: CGFloat = 10.0
@@ -63,14 +80,18 @@ class ViewController1: UIViewController {
     var timer4: NSTimer = NSTimer()
     var timer5: NSTimer = NSTimer()
     var timer6: NSTimer = NSTimer()
-    
-    
+
+
     var targetLabelArray = [UILabel]()
     var targetLabelArray2 = [UILabel]()
     var targetLabelArray3 = [UILabel]()
     var targetLabelArray4 = [UILabel]()
     var targetLabelArray5 = [UILabel]()
     var targetLabelArray6 = [UILabel]()
+    
+    
+
+  
     
     
     
@@ -100,6 +121,36 @@ class ViewController1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        audioPlot.backgroundColor = UIColor.orangeColor()
+//        audioPlot.color = UIColor.whiteColor()
+//        audioPlot.plotType = EZPlotType.Buffer //表示の仕方 Buffer or Rolling
+//        audioPlot.shouldFill = true            //グラフの表示
+//        //        self.audioPlot.shouldMirror = true          //グラフをx軸でミラーするか
+//        audioPlot.shouldOptimizeForRealtimePlot = true //リアルタイム描写の最適化
+        openFileWithFilePathURL(NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("syugabita", ofType: "mp3")!))
+        
+        audioPlayer = EZAudioPlayer()
+        audioPlayer.delegate = self
+        audioPlayer.playAudioFile(audioFile)
+        
+        
+        ezAudioFFT = EZAudioFFT()
+        ezAudioFFT.delegate = self
+        
+        audioPlotTime.plotType = EZPlotType.Buffer;
+        
+        audioPlotFreq.shouldFill = true
+        audioPlotFreq.plotType = EZPlotType.Buffer
+        audioPlotFreq.shouldCenterYAxis = false
+        
+        //        mic = EZMicrophone()
+        //        mic.delegate = self
+        
+        
+        
+        
+        fft = EZAudioFFTRolling(windowSize: FFTViewControllerFFTWindowSize, sampleRate: Float(self.audioPlayer.audioFile.clientFormat.mSampleRate), delegate: self)
+        
         //if timer.valid {
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01,target: self,
                                                        selector: #selector(self.up),userInfo: nil,repeats: true)
@@ -110,36 +161,109 @@ class ViewController1: UIViewController {
             nil,repeats: true)
         timer3 = NSTimer.scheduledTimerWithTimeInterval(0.01,target: self,
                                                         selector: #selector(self.up3),userInfo: nil,repeats: true)
-        //        timer4 = NSTimer.scheduledTimerWithTimeInterval(0.01,target: self,
-        //                                                       selector: #selector(self.up4),userInfo:   nil,repeats: true)
-        //                }
-        //        timer5 = NSTimer.scheduledTimerWithTimeInterval(0.01,target: self,
-        //                                                        selector: #selector(self.up5),userInfo: nil,repeats: true)
-        //        timer6 = NSTimer.scheduledTimerWithTimeInterval(0.01,target: self,
-        //                                                        selector: #selector(self.up5),userInfo: nil,repeats: true)
+//        timer4 = NSTimer.scheduledTimerWithTimeInterval(0.01,target: self,
+//                                                       selector: #selector(self.up4),userInfo:   nil,repeats: true)
+//                }
+//        timer5 = NSTimer.scheduledTimerWithTimeInterval(0.01,target: self,
+//                                                        selector: #selector(self.up5),userInfo: nil,repeats: true)
+//        timer6 = NSTimer.scheduledTimerWithTimeInterval(0.01,target: self,
+//                                                        selector: #selector(self.up5),userInfo: nil,repeats: true)
         
         
         
         //音楽ファィルの設定
-        if let audiopath = NSBundle.mainBundle().URLForResource("courage", withExtension: "mp3"){
-            
-            //audiopathに値に入ったら
-            do {
-                //audioが生成できるときはaudioを初期化、準備
-                audio = try AVAudioPlayer(contentsOfURL: audiopath)
-                //音楽を再生するメソッド
-                audio.play()
-            }catch {
-                //audioが生成できない時エラーになる
-                fatalError("プレイヤーが作れませんでした。")
-                
-            }
-        }else{
-            //audioPAthに値が入らなっかたらエラー
-            fatalError("audioPathに値が入りませんでした")
-        }
+//        if let audiopath = NSBundle.mainBundle().URLForResource("syugabita", withExtension: "mp3"){
+//            
+//            //audiopathに値に入ったら
+//            do {
+//                //audioが生成できるときはaudioを初期化、準備
+//                audio = try AVAudioPlayer(contentsOfURL: audiopath)
+//                //音楽を再生するメソッド
+//                audio.play()
+//            }catch {
+//                //audioが生成できない時エラーになる
+//                fatalError("プレイヤーが作れませんでした。")
+//                
+//            }
+//        }else{
+//            //audioPAthに値が入らなっかたらエラー
+//            fatalError("audioPathに値が入りませんでした")
+//        
+//        }
+    }
+    
+    func openFileWithFilePathURL(filePathURL:NSURL){
+        self.audioFile = EZAudioFile(URL: filePathURL)
+        self.audioFile.delegate = self
+        
+        var buffer = self.audioFile.getWaveformData().bufferForChannel(0)
+        var bufferSize = self.audioFile.getWaveformData().bufferSize
+        
+//        print("openfile")
+//        self.audioPlot.updateBuffer(buffer, withBufferSize: bufferSize)
         
     }
+    
+    func fft(fft: EZAudioFFT!, updatedWithFFTData fftData: UnsafeMutablePointer<Float>, bufferSize: vDSP_Length){
+        
+//        print("fft")
+        var maxFrequency = fft.maxFrequency
+        var noteName = EZAudioUtilities.noteNameStringForFrequency(maxFrequency, includeOctave: true)
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            
+//            print("noteName:\(noteName),maxFrequency:\(maxFrequency)")
+            self.audioPlotFreq.updateBuffer(fftData, withBufferSize: UInt32(80))
+            
+            print(fftData[9]*900)
+            
+            if fftData[9]*900 > 100 {
+                
+//                fftData[9]*900
+//                fftData[5]*900
+//                fftData[7]*900
+//                fftData[3]*600
+//                fftData[12]*600
+//                fftData[0]*600
+            print("///////////////////////////////////////////////////////////////////////////////////////////")
+            }
+            
+            
+        })
+        
+        
+        var fftArray = self.ptrToArray(fftData, length: Int(40))
+        
+//        print(fftArray)
+    }
+    
+    func ptrToArray(src: UnsafeMutablePointer<Float>, length: Int) -> Array<Float> {
+        var dst = [Float](count: length, repeatedValue: 0.0)
+        
+        dst.withUnsafeMutableBufferPointer({
+            ptr -> UnsafeMutablePointer<Float> in
+            return ptr.baseAddress
+        }).initializeFrom(src, count: length)
+        
+        return dst
+    }
+    
+    func audioPlayer(audioPlayer: EZAudioPlayer!, playedAudio buffer: UnsafeMutablePointer<UnsafeMutablePointer<Float>>, withBufferSize bufferSize: UInt32, withNumberOfChannels numberOfChannels: UInt32, inAudioFile audioFile: EZAudioFile!){
+        
+        fft.computeFFTWithBuffer(buffer[0], withBufferSize: bufferSize)
+        
+        
+        dispatch_async(dispatch_get_main_queue(),{
+            
+            self.audioPlotTime.updateBuffer(buffer[0], withBufferSize: bufferSize)
+            
+            
+        })
+        
+    }
+
+    
+    
     
     
     func up () {
@@ -153,7 +277,8 @@ class ViewController1: UIViewController {
         if (count >= timingArray[timingCount] || timingCount == 0){
             
             var targetLabel: UILabel = UILabel()
-            targetLabel = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.size.width/2,25,50,50))
+            targetLabel = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.size.width/2,UIScreen.mainScreen().bounds.size.height,50,50))
+            //音の発生源調整
             targetLabel.text = "■"
             targetLabel.font = UIFont.systemFontOfSize(50)
             targetLabel.backgroundColor = UIColor.blackColor()
@@ -178,6 +303,8 @@ class ViewController1: UIViewController {
                 if targetLabelArray[i].center.y > sizeY {
                     targetLabelArray[i].removeFromSuperview()
                     targetLabelArray.removeAtIndex(i)
+                
+                
                     iNum -= 1
                 }else{
                     targetLabelArray[i].center.y += speed
@@ -193,7 +320,7 @@ class ViewController1: UIViewController {
         if timingCount == timingArray.count-1 {
             timer.invalidate()
             timer2.invalidate()
-            audio.stop()
+            audioPlayer.pause()//stopからposeになった
             performSegueWithIdentifier("seguetest", sender: self)
         }
         
@@ -212,7 +339,7 @@ class ViewController1: UIViewController {
         if (count2 >= timingArray2[timingCount2] || timingCount2 == 0){
             
             var targetLabel2: UILabel = UILabel()
-            targetLabel2 = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.size.width/2, 25,50,50))
+            targetLabel2 = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.size.width/2,UIScreen.mainScreen().bounds.size.height,50,50))
             targetLabel2.text = "■"
             targetLabel2.font = UIFont.systemFontOfSize(50)
             targetLabel2.backgroundColor = UIColor.clearColor()
@@ -267,7 +394,7 @@ class ViewController1: UIViewController {
         if (count3 >= timingArray3[timingCount3] || timingCount3 == 0){
             
             var targetLabel: UILabel = UILabel()
-            targetLabel = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.size.width/2, 25,50,50))
+            targetLabel = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.size.width/2, UIScreen.mainScreen().bounds.size.height,50,50))
             targetLabel.text = "■"
             targetLabel.font = UIFont.systemFontOfSize(50)
             targetLabel.backgroundColor = UIColor.blackColor()
@@ -313,63 +440,64 @@ class ViewController1: UIViewController {
         
     }
     
-    func up4 () {
-        
-        let appframe:CGRect = UIScreen.mainScreen().bounds
-        let x = (appframe.size.width - 100) / 3 * 2 + 50
-        let sizeY = UIScreen.mainScreen().bounds.height
-        
-        
-        //普通に配列に追加して動かせば？
-        if (count4 >= timingArray4[timingCount4] || timingCount4 == 0){
-            
-            var targetLabel: UILabel = UILabel()
-            targetLabel = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.size.width/2, 25, 50, 50))
-            targetLabel.text = "■"
-            targetLabel.font = UIFont.systemFontOfSize(50)
-            targetLabel.backgroundColor = UIColor.blackColor()
-            targetLabel.tag = 0
-            self.view.addSubview(targetLabel)
-            
-            targetLabelArray4.append(targetLabel)
-            
-            timingCount4 += 1
-            count4 = 0.0
-        }
-        
-        if targetLabelArray4.count != 0{
-            
-            var iNum = 0
-            for i in 0..<targetLabelArray4.count{
-                
-                if iNum == -1 {
-                    break
-                }
-                
-                if targetLabelArray4[i].center.y > sizeY {
-                    targetLabelArray4[i].removeFromSuperview()
-                    targetLabelArray4.removeAtIndex(i)
-                    iNum -= 1
-                }else{
-                    targetLabelArray4[i].center.y += speed
-                    iNum += 1
-                    //                    targetLabelArray4[i].bounds.width =
-                    targetLabelArray4[i].center.x += 5
+        func up4 () {
+    
+            let appframe:CGRect = UIScreen.mainScreen().bounds
+            let x = (appframe.size.width - 100) / 3 * 2 + 50
+            let sizeY = UIScreen.mainScreen().bounds.height
+    
+    
+            //普通に配列に追加して動かせば？
+            if (count4 >= timingArray4[timingCount4] || timingCount4 == 0){
+    
+                var targetLabel: UILabel = UILabel()
+                targetLabel = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.size.width/2,
+                UIScreen.mainScreen().bounds.size.height/2, 50, 50))
+                targetLabel.text = "■"
+                targetLabel.font = UIFont.systemFontOfSize(50)
+                targetLabel.backgroundColor = UIColor.blackColor()
+                targetLabel.tag = 0
+                self.view.addSubview(targetLabel)
+    
+                targetLabelArray4.append(targetLabel)
+    
+                timingCount4 += 1
+                count4 = 0.0
+            }
+    
+            if targetLabelArray4.count != 0{
+    
+                var iNum = 0
+                for i in 0..<targetLabelArray4.count{
+    
+                    if iNum == -1 {
+                        break
+                    }
+    
+                    if targetLabelArray4[i].center.y > sizeY {
+                        targetLabelArray4[i].removeFromSuperview()
+                        targetLabelArray4.removeAtIndex(i)
+                        iNum -= 1
+                    }else{
+                        targetLabelArray4[i].center.y += speed
+                        iNum += 1
+                        //                    targetLabelArray4[i].bounds.width =
+                        targetLabelArray4[i].center.x += 5
+                    }
                 }
             }
-        }
-        
-        count += 0.01
-        
-        if timingCount4 == timingArray4.count-1 {
-            timer.invalidate()
-            timer2.invalidate()
-            audio.stop()
-            performSegueWithIdentifier("seguetest", sender: self)
-        }
-        
-    }
     
+            count += 0.01
+    
+            if timingCount4 == timingArray4.count-1 {
+                timer.invalidate()
+                timer2.invalidate()
+                audio.stop()
+                performSegueWithIdentifier("seguetest", sender: self)
+            }
+    
+        }
+
     func up5 () {
         
         let appframe:CGRect = UIScreen.mainScreen().bounds
@@ -596,10 +724,14 @@ class ViewController1: UIViewController {
     
     
     
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     @IBAction func pushButton() {
         //        hanteiLabel.text = hantei(10.0)
@@ -609,7 +741,7 @@ class ViewController1: UIViewController {
         //
         hantei(timingArray[timingCount])
         
-    }
+            }
     
     @IBAction func pushButton2() {
         //        hanteiLabel.text = hantei(3.0)
@@ -630,7 +762,8 @@ class ViewController1: UIViewController {
         timer5.invalidate()
         timer6.invalidate()
         
-        audio.pause()
+//        audio.pause()
+        audioPlayer.pause()
         
         
         poseImage.hidden = false
@@ -643,6 +776,7 @@ class ViewController1: UIViewController {
         lowerleftButton.enabled = false
         leftButton.enabled = false
         centerButton.enabled = false
+        centerButton2.enabled = false
     }
     
     @IBAction func pushmodoru(sender: AnyObject) {
@@ -651,7 +785,7 @@ class ViewController1: UIViewController {
         
         //timer2 = NSTimer.scheduledTimerWithTimeInterval(0.01,target: self,
         //selector: #selector(self.up2),userInfo: nil,repeats: true)
-        audio.play()
+        audioPlayer.play()
         
         poseImage.hidden = true
         poseKyoku.hidden = true
@@ -663,7 +797,8 @@ class ViewController1: UIViewController {
         lowerleftButton.enabled = true
         leftButton.enabled = true
         centerButton.enabled = true
-        
+    
     }
     
+
 }
