@@ -25,6 +25,46 @@
             </objects>
             <point key="canvasLocation" x="853.5" y="-559.5"/>
         </scene>
+        <!--Play View Controller-->
+        <scene sceneID="62k-Hh-MV4">
+            <objects>
+                <viewController id="HEq-Rx-sqU" customClass="PlayViewController" customModule="Musicgame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dcx-Y6-lgy"/>
+                        <viewControllerLayoutGuide type="bottom" id="r3s-KU-qvL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="efR-Gh-dzh">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DlK-be-iuT" customClass="SKView">
+                                <rect key="frame" x="0.0" y="-13" width="667" height="420"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fdn-BB-0HF" customClass="EZAudioPlot">
+                                <rect key="frame" x="385" y="54" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vhs-La-V01" customClass="EZAudioPlot">
+                                <rect key="frame" x="213" y="227" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="audioPlotFreq" destination="Fdn-BB-0HF" id="7n8-EB-Zbt"/>
+                        <outlet property="audioPlotTime" destination="Vhs-La-V01" id="7GJ-zr-b1G"/>
+                        <outlet property="soundBoardView" destination="DlK-be-iuT" id="Dtp-A4-Wya"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMf-0Z-s6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1519.5" y="-987.5"/>
+        </scene>
         <!--View Controllerhome-->
         <scene sceneID="G4M-E0-ORh">
             <objects>
@@ -86,6 +126,14 @@
                                 <state key="normal" title="counrage"/>
                                 <connections>
                                     <segue destination="fJd-uE-yFG" kind="modal" id="deW-Bv-ekN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4b-PI-r16">
+                                <rect key="frame" x="577" y="40" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="HEq-Rx-sqU" kind="modal" id="a0y-iS-Hjn"/>
                                 </connections>
                             </button>
                         </subviews>

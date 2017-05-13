@@ -29,6 +29,8 @@
 		58899E1D1DCDF0A6003596A9 /* score4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58899E1C1DCDF0A6003596A9 /* score4ViewController.swift */; };
 		58980C391DE02BC500AECCE9 /* くろ.png in Resources */ = {isa = PBXBuildFile; fileRef = 58980C381DE02BC500AECCE9 /* くろ.png */; };
 		58980C3B1DE0488D00AECCE9 /* gakkougurasi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 58980C3A1DE0488D00AECCE9 /* gakkougurasi.mp3 */; };
+		58DDC2491EC71C9600474D4C /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC2481EC71C9600474D4C /* PlayViewController.swift */; };
+		58DDC24B1EC71C9A00474D4C /* SoundBoardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC24A1EC71C9A00474D4C /* SoundBoardScene.swift */; };
 		6E55B39DA469FDD23B3ACC0A /* Pods_MusicgameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696F6A0BC79E778597F689F0 /* Pods_MusicgameUITests.framework */; };
 		79A4E827CB6683B7E7E3CCA3 /* Pods_Musicgame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ACF9CAD6C03069322593BD /* Pods_Musicgame.framework */; };
 		A4B60E33FDA151D066D8F422 /* Pods_MusicgameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128A7EC82A3DAF46A8AA2FF6 /* Pods_MusicgameTests.framework */; };
@@ -81,6 +83,8 @@
 		58899E1C1DCDF0A6003596A9 /* score4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = score4ViewController.swift; sourceTree = "<group>"; };
 		58980C381DE02BC500AECCE9 /* くろ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "くろ.png"; sourceTree = "<group>"; };
 		58980C3A1DE0488D00AECCE9 /* gakkougurasi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gakkougurasi.mp3; sourceTree = "<group>"; };
+		58DDC2481EC71C9600474D4C /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		58DDC24A1EC71C9A00474D4C /* SoundBoardScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundBoardScene.swift; sourceTree = "<group>"; };
 		64F3453181A0237FA13FB066 /* Pods-MusicgameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicgameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicgameUITests/Pods-MusicgameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		696F6A0BC79E778597F689F0 /* Pods_MusicgameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicgameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4ACF9CAD6C03069322593BD /* Pods_Musicgame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musicgame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +158,8 @@
 		5840DC921DBB532A00C51466 /* Musicgame */ = {
 			isa = PBXGroup;
 			children = (
+				58DDC24A1EC71C9A00474D4C /* SoundBoardScene.swift */,
+				58DDC2481EC71C9600474D4C /* PlayViewController.swift */,
 				5840DCD71DBB543200C51466 /* icon.png */,
 				5840DC931DBB532A00C51466 /* AppDelegate.swift */,
 				5832211A1E3DF24100D70634 /* syugabita.mp3 */,
@@ -500,12 +506,14 @@
 				5840DCC41DBB537600C51466 /* score2ViewController.swift in Sources */,
 				5840DCC61DBB537600C51466 /* ScoreViewController.swift in Sources */,
 				5840DCCC1DBB539200C51466 /* ViewControllerhome.swift in Sources */,
+				58DDC2491EC71C9600474D4C /* PlayViewController.swift in Sources */,
 				58899E1D1DCDF0A6003596A9 /* score4ViewController.swift in Sources */,
 				5840DC941DBB532A00C51466 /* AppDelegate.swift in Sources */,
 				5840DCC51DBB537600C51466 /* score3ViewController.swift in Sources */,
 				5840DCCB1DBB539200C51466 /* ViewController3.swift in Sources */,
 				58089E9C1DC9A7AF00757C19 /* ViewController4.swift in Sources */,
 				5840DCCA1DBB539200C51466 /* ViewController2.swift in Sources */,
+				58DDC24B1EC71C9A00474D4C /* SoundBoardScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
