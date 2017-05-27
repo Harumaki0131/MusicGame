@@ -19,6 +19,8 @@ class PlayViewController: UIViewController{
     
     @IBOutlet var soundBoardView:SKView!
     
+    var timingArray:[Double] = []
+    
     var soundBoardScene:SoundBoardScene = SoundBoardScene()
     
     var delegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate //AppDelegateのインスタンスを取得
@@ -117,7 +119,13 @@ extension PlayViewController: EZAudioFFTDelegate{
             print(fftData[5]*100)
             if fftData[5]*100 > 100 {
                 self.soundBoardScene.showNode()
+            print(self.audioPlayer.currentTime)
+                self.timingArray.append(self.audioPlayer.currentTime)
+                
+                
             }
+            
+            
         })
         
         var fftArray = self.ptrToArray(fftData, length: Int(40))
@@ -139,7 +147,17 @@ extension PlayViewController: EZAudioPlayerDelegate{
         })
         
     }
+    
+    
+    func audioPlayer(audioPlayer: EZAudioPlayer!, reachedEndOfAudioFile audioFile: EZAudioFile!) {
+    
+        let saveDate: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        saveDate.setObject(timingArray, forKey: "timing" )
+        
+    }
+    
 }
+
 
 //extension PlayViewController: EZAudioFileDelegate{
 //    

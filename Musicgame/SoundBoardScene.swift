@@ -29,22 +29,23 @@ class SoundBoardScene: SKScene, SKPhysicsContactDelegate {
         
         
         
-        nodeSize = view.frame.width / 20
-        
-        for i in 0..<8{
-            
-        }
-        
-        var node:SKSpriteNode = SKSpriteNode()
-        node.color = UIColor.greenColor()
-        node.position = view.center
-        node.size = CGSize(width: nodeSize, height: nodeSize)
+        nodeSize = view.frame.width / 20//................................
+                                                                       //.
+        for i in 0..<8{                                                //.
+                                                                       //.
+        }                                                              //.
+                                                                       //.
+        var node:SKSpriteNode = SKSpriteNode()                         //.
+        node.color = UIColor.blueColor()//(色）                         //.
+        node.position = view.center//（生成位置）                        //.
+        node.size = CGSize(width: nodeSize, height: nodeSize)//(サイズ）//.
         node.physicsBody = SKPhysicsBody(circleOfRadius: nodeSize/2)
         node.physicsBody?.contactTestBitMask = 0x1 << UInt32(1)
         node.physicsBody?.allowsRotation = false
         node.physicsBody?.restitution = 0.0
         node.physicsBody?.affectedByGravity = false
         node.name = ""
+        
         addChild(node)
         
         
@@ -67,7 +68,7 @@ class SoundBoardScene: SKScene, SKPhysicsContactDelegate {
         
         if isNodeStop == false{
             var node:SKSpriteNode = SKSpriteNode()
-            node.color = UIColor.greenColor()
+            node.color = UIColor.blueColor()
             node.position = self.view!.center
             node.size = CGSize(width: nodeSize, height: nodeSize)
             node.physicsBody = SKPhysicsBody(circleOfRadius: nodeSize/2)
