@@ -118,9 +118,9 @@ extension PlayViewController: EZAudioFFTDelegate{
             self.audioPlotFreq.updateBuffer(fftData, withBufferSize: UInt32(40))
             print(fftData[5]*100)
             if fftData[5]*100 > 100 {
-                self.soundBoardScene.showNode()
+                self.soundBoardScene.showNode()   //ぶろっくをつくる
             print(self.audioPlayer.currentTime)
-                self.timingArray.append(self.audioPlayer.currentTime)
+                self.timingArray.append(self.audioPlayer.currentTime)       //配列にぶろっくだすじかんをきろく
                 
                 
             }

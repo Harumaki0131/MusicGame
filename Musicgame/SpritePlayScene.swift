@@ -1,8 +1,18 @@
 //
-//  ViewController.swift
-//  ぬっきぃのMusicgame
+//  SpritePlayScene.swift
+//  Musicgame
 //
-//  Created by EriyaMurakami on 2016/06/25.
+//  Created by EriyaMurakami on 2017/06/10.
+//  Copyright © 2017年 EriyaMurakami. All rights reserved.
+//
+
+import Foundation
+
+//
+//  2ViewController.swift
+//  Musicgame
+//
+//  Created by EriyaMurakami on 2016/08/04.
 //  Copyright © 2016年 EriyaMurakami. All rights reserved.
 //
 
@@ -10,7 +20,7 @@ import UIKit
 import SpriteKit
 
 
-class SoundBoardScene1: SKScene, SKPhysicsContactDelegate {
+class SpritePlayScene: SKScene, SKPhysicsContactDelegate {
     
     var nodeSize:CGFloat = 0.0
     
@@ -20,6 +30,13 @@ class SoundBoardScene1: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
+        
+        //ここで呼び出す
+        //ヒント
+        let saveDate: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+//        saveDate.setObject(timingArray, forKey: "timing" )
+          saveData.object(forKey: "timing")
+
         
         self.view?.backgroundColor = UIColor.clearColor()
         self.physicsWorld.contactDelegate = self
@@ -48,18 +65,23 @@ class SoundBoardScene1: SKScene, SKPhysicsContactDelegate {
         addChild(node)
         
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "timerUpDate:", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timerUpDate:", userInfo: nil, repeats: true)
         
     }
     
     override func update(currentTime: NSTimeInterval) {
         super.update(currentTime)
         
+        
+        
+        
     }
     
     func timerUpDate(timer:NSTimer){
         
         isNodeStop = false
+        
+        
         
     }
     

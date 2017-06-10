@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ht-nw-Yfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853.5" y="-559.5"/>
+            <point key="canvasLocation" x="725" y="-685"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="62k-Hh-MV4">
@@ -40,12 +40,14 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DlK-be-iuT" customClass="SKView">
                                 <rect key="frame" x="0.0" y="-13" width="667" height="420"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fdn-BB-0HF" customClass="EZAudioPlot">
+                                        <rect key="frame" x="213" y="73" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fdn-BB-0HF" customClass="EZAudioPlot">
-                                <rect key="frame" x="385" y="54" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vhs-La-V01" customClass="EZAudioPlot">
                                 <rect key="frame" x="213" y="227" width="240" height="128"/>
@@ -63,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMf-0Z-s6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556" y="-1015"/>
+            <point key="canvasLocation" x="2626" y="-742"/>
         </scene>
         <!--View Controllerhome-->
         <scene sceneID="G4M-E0-ORh">
@@ -149,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7J4-bn-w2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520.5" y="-559.5"/>
+            <point key="canvasLocation" x="1733" y="-570"/>
         </scene>
         <!--View Controller4-->
         <scene sceneID="sYv-I3-4QG">
@@ -163,128 +165,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="syokigazou.png" translatesAutoresizingMaskIntoConstraints="NO" id="2wG-n3-Wvp">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GKK-NI-ow4" customClass="SKView">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="420"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HuY-zJ-qAB" customClass="EZAudioPlot">
-                                <rect key="frame" x="0.0" y="86" width="667" height="156"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTl-8z-gQZ" customClass="EZAudioPlot">
+                                        <rect key="frame" x="213" y="64" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEA-w1-WXW">
-                                <rect key="frame" x="293" y="318" width="81" height="50"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IyU-tc-sfN" customClass="EZAudioPlot">
+                                <rect key="frame" x="213" y="240" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="真ん中">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxK-uY-Dj6">
-                                <rect key="frame" x="293" y="8" width="81" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="真ん中上">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3X-61-CWS">
-                                <rect key="frame" x="571" y="107" width="71" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="右">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGW-l3-ceo">
-                                <rect key="frame" x="57" y="127" width="76" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="左">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYL-mW-M9c">
-                                <rect key="frame" x="354" y="38" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXb-jc-igK">
-                                <rect key="frame" x="620" y="13" width="47" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="中断"/>
-                                <connections>
-                                    <action selector="pushpause:" destination="s8B-LE-c3u" eventType="touchUpInside" id="Yy0-gb-XIU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmo-NR-myg">
-                                <rect key="frame" x="57" y="243" width="76" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="左下">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSy-Qw-PzZ">
-                                <rect key="frame" x="571" y="242" width="71" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="右下">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="くろ.png" translatesAutoresizingMaskIntoConstraints="NO" id="RSM-Y8-PZ4">
-                                <rect key="frame" x="146" y="67" width="375" height="242"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg0-NE-G0N">
-                                <rect key="frame" x="400" y="114" width="30" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="pushmodoru:" destination="s8B-LE-c3u" eventType="touchUpInside" id="jtZ-wN-huB"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrp-7M-F0c">
-                                <rect key="frame" x="199" y="123" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="曲選択に戻る"/>
-                                <connections>
-                                    <segue destination="3dJ-1R-iUR" kind="push" id="ItG-gL-ab5"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="seY-mD-RtY" customClass="EZAudioPlot">
-                                <rect key="frame" x="211" y="291" width="245" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="xax-Fa-eUd"/>
                     <connections>
-                        <outlet property="audioPlotFreq" destination="seY-mD-RtY" id="xJk-LP-9fH"/>
-                        <outlet property="audioPlotTime" destination="HuY-zJ-qAB" id="Ltc-Ba-unX"/>
-                        <outlet property="centerButton" destination="pEA-w1-WXW" id="eV3-Zv-WKM"/>
-                        <outlet property="centerButton2" destination="gxK-uY-Dj6" id="ves-du-Oxi"/>
-                        <outlet property="leftButton" destination="IGW-l3-ceo" id="5iA-vm-mnZ"/>
-                        <outlet property="lowerleftButton" destination="tmo-NR-myg" id="nyb-82-OaI"/>
-                        <outlet property="lowerrightButton" destination="MSy-Qw-PzZ" id="8io-Fj-p1k"/>
-                        <outlet property="poseButton" destination="VXb-jc-igK" id="nbl-bs-ZlB"/>
-                        <outlet property="poseImage" destination="RSM-Y8-PZ4" id="7cO-Pf-6tz"/>
-                        <outlet property="poseKyoku" destination="qrp-7M-F0c" id="L7h-4L-5AR"/>
-                        <outlet property="poseModoru" destination="Kg0-NE-G0N" id="cUA-t6-pwQ"/>
-                        <outlet property="rightButton" destination="M3X-61-CWS" id="JfY-FE-aZN"/>
+                        <outlet property="audioPlotFreq" destination="cTl-8z-gQZ" id="rxx-k5-q1h"/>
+                        <outlet property="audioPlotTime" destination="IyU-tc-sfN" id="NBz-Kd-Mt1"/>
+                        <outlet property="soundBoardView" destination="GKK-NI-ow4" id="oa1-Gf-wwI"/>
                         <segue destination="epo-kq-uxh" kind="push" identifier="seguetest" id="eJu-X2-Hbg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebE-43-cSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178.5" y="-150.5"/>
+            <point key="canvasLocation" x="145" y="269"/>
         </scene>
         <!--View Controller2-->
         <scene sceneID="UxQ-WY-81J">
@@ -314,27 +225,38 @@
                                 <rect key="frame" x="609" y="28" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="中断"/>
-                                <connections>
-                                    <action selector="pushpause:" destination="fJd-uE-yFG" eventType="touchUpInside" id="dsV-co-MN8"/>
-                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zO-bJ-Yhr">
                                 <rect key="frame" x="458" y="102" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="pushmodoru:" destination="fJd-uE-yFG" eventType="touchUpInside" id="7NL-Sy-CeM"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chw-X0-EoG" customClass="SKView">
                                 <rect key="frame" x="0.0" y="-23" width="667" height="420"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Awp-t5-GXy" customClass="EZAudioPlot">
+                                        <rect key="frame" x="213" y="66" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Awp-t5-GXy" customClass="EZAudioPlot">
-                                <rect key="frame" x="385" y="44" width="240" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRp-yN-2V7" customClass="SKView">
+                                <rect key="frame" x="10" y="-13" width="667" height="420"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfW-t9-fnc" customClass="EZAudioPlot">
+                                <rect key="frame" x="395" y="54" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="usd-mu-Vsf" customClass="EZAudioPlot">
+                                <rect key="frame" x="223" y="227" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ZR-bG-ItD" customClass="EZAudioPlot">
                                 <rect key="frame" x="213" y="217" width="240" height="128"/>
@@ -345,16 +267,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="DED-tU-v7y"/>
-                    <connections>
-                        <outlet property="poseButton" destination="mcp-GN-OHg" id="I6j-3f-wCk"/>
-                        <outlet property="poseImage" destination="CvJ-QH-Ujg" id="e1G-md-ZIw"/>
-                        <outlet property="poseKyoku" destination="s1K-6b-beF" id="dta-WM-XGD"/>
-                        <outlet property="poseModoru" destination="8zO-bJ-Yhr" id="aLA-EL-gzL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Se7-3p-7Dm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556" y="-95"/>
+            <point key="canvasLocation" x="1705" y="86"/>
         </scene>
         <!--View Controller3-->
         <scene sceneID="6mS-mE-aCR">
@@ -372,57 +288,11 @@
                                 <rect key="frame" x="624" y="20" width="43" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="中断"/>
-                                <connections>
-                                    <action selector="pushpause:" destination="doV-Dv-CUQ" eventType="touchUpInside" id="4wC-tm-do3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nP9-gd-QuT">
-                                <rect key="frame" x="583" y="122" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="右">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uy5-fT-56d">
-                                <rect key="frame" x="588" y="233" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="右下">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0P-OD-2Tc">
-                                <rect key="frame" x="323" y="313" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="真ん中">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yL3-t1-vAe">
-                                <rect key="frame" x="34" y="122" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="左">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hG-zk-Ghb">
-                                <rect key="frame" x="34" y="233" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="左下">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRp-jz-gPF">
                                 <rect key="frame" x="426" y="112" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="pushmodoru:" destination="doV-Dv-CUQ" eventType="touchUpInside" id="ed1-om-Hyb"/>
-                                </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="くろ.png" translatesAutoresizingMaskIntoConstraints="NO" id="d0p-DF-6ZC">
                                 <rect key="frame" x="162" y="77" width="343" height="221"/>
@@ -436,24 +306,30 @@
                                     <segue destination="3dJ-1R-iUR" kind="modal" id="4ha-DM-371"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKs-TV-OPq" customClass="SKView">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WF2-Os-zbv" customClass="EZAudioPlot">
+                                        <rect key="frame" x="213" y="55" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHL-L8-NRd" customClass="EZAudioPlot">
+                                <rect key="frame" x="213" y="240" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <connections>
-                        <outlet property="centerButton" destination="B0P-OD-2Tc" id="Yk1-Oa-Svx"/>
-                        <outlet property="leftButton" destination="yL3-t1-vAe" id="BOG-T2-MpN"/>
-                        <outlet property="lowerleftButton" destination="0hG-zk-Ghb" id="1g5-2F-12f"/>
-                        <outlet property="lowerrightButton" destination="uy5-fT-56d" id="nh3-Oj-Moi"/>
-                        <outlet property="poseButton" destination="X9l-LK-GqL" id="4gR-3G-Hgl"/>
-                        <outlet property="poseImage" destination="d0p-DF-6ZC" id="Cfq-k4-ldC"/>
-                        <outlet property="poseKyoku" destination="Ekb-Dn-BxG" id="blH-db-Yyo"/>
-                        <outlet property="poseModoru" destination="uRp-jz-gPF" id="0Eo-lt-hv9"/>
-                        <outlet property="rightButton" destination="nP9-gd-QuT" id="2BG-ns-y0g"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0e-8E-Z6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853.5" y="-142.5"/>
+            <point key="canvasLocation" x="883.5" y="268.5"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="H2F-3C-OOK">
@@ -495,12 +371,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xZ-Tw-sAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178.5" y="-559.5"/>
+            <point key="canvasLocation" x="27" y="-560"/>
         </scene>
     </scenes>
     <resources>
         <image name="Unknown.png/Users/eriyamurakami/Desktop/スクリーンショット 2016-11-19 15.40.48.png" width="959" height="1248"/>
-        <image name="syokigazou.png" width="595" height="842"/>
         <image name="くろ.png" width="98" height="197"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

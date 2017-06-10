@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		58089E9C1DC9A7AF00757C19 /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58089E9B1DC9A7AF00757C19 /* ViewController4.swift */; };
+		581C5F181EEBE6600005535B /* SpritePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C5F171EEBE6600005535B /* SpritePlayScene.swift */; };
 		5832211B1E3DF24100D70634 /* syugabita.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5832211A1E3DF24100D70634 /* syugabita.mp3 */; };
 		5832211D1E6179B600D70634 /* syokigazou.png in Resources */ = {isa = PBXBuildFile; fileRef = 5832211C1E6179B600D70634 /* syokigazou.png */; };
 		5840DC941DBB532A00C51466 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840DC931DBB532A00C51466 /* AppDelegate.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		128A7EC82A3DAF46A8AA2FF6 /* Pods_MusicgameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicgameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58089E9B1DC9A7AF00757C19 /* ViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
+		581C5F171EEBE6600005535B /* SpritePlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpritePlayScene.swift; sourceTree = "<group>"; };
 		5832211A1E3DF24100D70634 /* syugabita.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = syugabita.mp3; sourceTree = "<group>"; };
 		5832211C1E6179B600D70634 /* syokigazou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = syokigazou.png; sourceTree = "<group>"; };
 		5840DC901DBB532A00C51466 /* Musicgame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicgame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +176,7 @@
 				5840DCC81DBB539200C51466 /* ViewController3.swift */,
 				5840DCC21DBB537600C51466 /* score3ViewController.swift */,
 				58089E9B1DC9A7AF00757C19 /* ViewController4.swift */,
+				581C5F171EEBE6600005535B /* SpritePlayScene.swift */,
 				58899E1C1DCDF0A6003596A9 /* score4ViewController.swift */,
 				5840DCC91DBB539200C51466 /* ViewControllerhome.swift */,
 				5840DC9A1DBB532A00C51466 /* Assets.xcassets */,
@@ -507,6 +510,7 @@
 				5840DCC61DBB537600C51466 /* ScoreViewController.swift in Sources */,
 				5840DCCC1DBB539200C51466 /* ViewControllerhome.swift in Sources */,
 				58DDC2491EC71C9600474D4C /* PlayViewController.swift in Sources */,
+				581C5F181EEBE6600005535B /* SpritePlayScene.swift in Sources */,
 				58899E1D1DCDF0A6003596A9 /* score4ViewController.swift in Sources */,
 				5840DC941DBB532A00C51466 /* AppDelegate.swift in Sources */,
 				5840DCC51DBB537600C51466 /* score3ViewController.swift in Sources */,
