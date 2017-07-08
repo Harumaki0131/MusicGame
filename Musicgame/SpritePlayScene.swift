@@ -33,9 +33,13 @@ class SpritePlayScene: SKScene, SKPhysicsContactDelegate {
         
         //ここで呼び出す
         //ヒント
-        let saveDate: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-//        saveDate.setObject(timingArray, forKey: "timing" )
-          saveData.object(forKey: "timing")
+        let saveData: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let timing: [Double] = saveData.arrayForKey("timing") as! [Double]
+//        let timing: [Double] = saveData.object(forKey: "timing")
+        
+//        saveData.setObject(timingArray, forKey: "timing" )
+        
+
 
         
         self.view?.backgroundColor = UIColor.clearColor()
