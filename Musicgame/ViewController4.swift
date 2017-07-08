@@ -31,7 +31,7 @@ class ViewController4: UIViewController{
     
     var audioFile:EZAudioFile!{
         didSet{
-            //            audioFile.delegate = self
+//            audioFile.delegate = self
         }
     }
     
@@ -115,15 +115,15 @@ extension ViewController4: EZAudioFFTDelegate{
         dispatch_async(dispatch_get_main_queue(), {
             
             //            print("noteName:\(noteName),maxFrequency:\(maxFrequency)")
-//            self.audioPlotFreq.updateBuffer(fftData, withBufferSize: UInt32(40))
-//            print(fftData[5]*100)
-//            if fftData[5]*100 > 100 {
-//                self.soundBoardScene.showNode()   //ぶろっくをつくる
-//                print(self.audioPlayer.currentTime)
-//                self.timingArray.append(self.audioPlayer.currentTime)       //配列にぶろっくだすじかんをきろく
+            self.audioPlotFreq.updateBuffer(fftData, withBufferSize: UInt32(40))
+            print(fftData[5]*100)
+            if fftData[5]*100 > 100 {
+                self.soundBoardScene.showNode()   //ぶろっくをつくる
+                print(self.audioPlayer.currentTime)
+                self.timingArray.append(self.audioPlayer.currentTime)       //配列にぶろっくだすじかんをきろく
                 
                 
-//            }
+            }
             
             
         })

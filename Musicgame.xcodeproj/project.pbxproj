@@ -30,6 +30,7 @@
 		58899E1D1DCDF0A6003596A9 /* score4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58899E1C1DCDF0A6003596A9 /* score4ViewController.swift */; };
 		58980C391DE02BC500AECCE9 /* くろ.png in Resources */ = {isa = PBXBuildFile; fileRef = 58980C381DE02BC500AECCE9 /* くろ.png */; };
 		58980C3B1DE0488D00AECCE9 /* gakkougurasi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 58980C3A1DE0488D00AECCE9 /* gakkougurasi.mp3 */; };
+		58AC60711F10EDEC001F9D8A /* inputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AC60701F10EDEC001F9D8A /* inputViewController.swift */; };
 		58DDC2491EC71C9600474D4C /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC2481EC71C9600474D4C /* PlayViewController.swift */; };
 		58DDC24B1EC71C9A00474D4C /* SoundBoardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC24A1EC71C9A00474D4C /* SoundBoardScene.swift */; };
 		6E55B39DA469FDD23B3ACC0A /* Pods_MusicgameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696F6A0BC79E778597F689F0 /* Pods_MusicgameUITests.framework */; };
@@ -85,6 +86,7 @@
 		58899E1C1DCDF0A6003596A9 /* score4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = score4ViewController.swift; sourceTree = "<group>"; };
 		58980C381DE02BC500AECCE9 /* くろ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "くろ.png"; sourceTree = "<group>"; };
 		58980C3A1DE0488D00AECCE9 /* gakkougurasi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gakkougurasi.mp3; sourceTree = "<group>"; };
+		58AC60701F10EDEC001F9D8A /* inputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inputViewController.swift; sourceTree = "<group>"; };
 		58DDC2481EC71C9600474D4C /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		58DDC24A1EC71C9A00474D4C /* SoundBoardScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundBoardScene.swift; sourceTree = "<group>"; };
 		64F3453181A0237FA13FB066 /* Pods-MusicgameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicgameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicgameUITests/Pods-MusicgameUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,8 @@
 			children = (
 				58DDC24A1EC71C9A00474D4C /* SoundBoardScene.swift */,
 				58DDC2481EC71C9600474D4C /* PlayViewController.swift */,
+				5840DCC91DBB539200C51466 /* ViewControllerhome.swift */,
+				5840DCC31DBB537600C51466 /* ScoreViewController.swift */,
 				5840DCD71DBB543200C51466 /* icon.png */,
 				5840DC931DBB532A00C51466 /* AppDelegate.swift */,
 				5832211A1E3DF24100D70634 /* syugabita.mp3 */,
@@ -169,16 +173,12 @@
 				585708301E14A051002C8C7B /* courage.mp3 */,
 				585708321E14A065002C8C7B /* INNOCENCE.mp3 */,
 				5840DC971DBB532A00C51466 /* Main.storyboard */,
+				58AC60701F10EDEC001F9D8A /* inputViewController.swift */,
 				5840DC951DBB532A00C51466 /* ViewController.swift */,
-				5840DCC31DBB537600C51466 /* ScoreViewController.swift */,
-				5840DCC11DBB537600C51466 /* score2ViewController.swift */,
-				5840DCC71DBB539200C51466 /* ViewController2.swift */,
-				5840DCC81DBB539200C51466 /* ViewController3.swift */,
-				5840DCC21DBB537600C51466 /* score3ViewController.swift */,
+				58899E1C1DCDF0A6003596A9 /* score4ViewController.swift */,
 				58089E9B1DC9A7AF00757C19 /* ViewController4.swift */,
 				581C5F171EEBE6600005535B /* SpritePlayScene.swift */,
-				58899E1C1DCDF0A6003596A9 /* score4ViewController.swift */,
-				5840DCC91DBB539200C51466 /* ViewControllerhome.swift */,
+				58AC606D1F10B748001F9D8A /* okimono */,
 				5840DC9A1DBB532A00C51466 /* Assets.xcassets */,
 				5840DC9C1DBB532A00C51466 /* LaunchScreen.storyboard */,
 				5840DC9F1DBB532A00C51466 /* Info.plist */,
@@ -204,6 +204,17 @@
 				5840DCB51DBB532B00C51466 /* Info.plist */,
 			);
 			path = MusicgameUITests;
+			sourceTree = "<group>";
+		};
+		58AC606D1F10B748001F9D8A /* okimono */ = {
+			isa = PBXGroup;
+			children = (
+				5840DCC11DBB537600C51466 /* score2ViewController.swift */,
+				5840DCC71DBB539200C51466 /* ViewController2.swift */,
+				5840DCC81DBB539200C51466 /* ViewController3.swift */,
+				5840DCC21DBB537600C51466 /* score3ViewController.swift */,
+			);
+			name = okimono;
 			sourceTree = "<group>";
 		};
 		F8D6DE01DBD006576B1904E0 /* Pods */ = {
@@ -508,6 +519,7 @@
 				5840DC961DBB532A00C51466 /* ViewController.swift in Sources */,
 				5840DCC41DBB537600C51466 /* score2ViewController.swift in Sources */,
 				5840DCC61DBB537600C51466 /* ScoreViewController.swift in Sources */,
+				58AC60711F10EDEC001F9D8A /* inputViewController.swift in Sources */,
 				5840DCCC1DBB539200C51466 /* ViewControllerhome.swift in Sources */,
 				58DDC2491EC71C9600474D4C /* PlayViewController.swift in Sources */,
 				581C5F181EEBE6600005535B /* SpritePlayScene.swift in Sources */,

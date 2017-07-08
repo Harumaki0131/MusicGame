@@ -118,17 +118,11 @@
                                 <rect key="frame" x="427" y="123" width="91" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title=" INNOCENCE"/>
-                                <connections>
-                                    <segue destination="doV-Dv-CUQ" kind="modal" id="73X-YP-hLT"/>
-                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eE1-xe-OrQ">
                                 <rect key="frame" x="440" y="161" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="counrage"/>
-                                <connections>
-                                    <segue destination="fJd-uE-yFG" kind="modal" id="deW-Bv-ekN"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4b-PI-r16">
                                 <rect key="frame" x="577" y="40" width="46" height="30"/>
@@ -136,6 +130,14 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="HEq-Rx-sqU" kind="modal" id="a0y-iS-Hjn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mG8-dm-s64">
+                                <rect key="frame" x="577" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="L4w-KJ-d5q" kind="modal" id="jlk-LA-7uj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,6 +154,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7J4-bn-w2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1747" y="-686"/>
+        </scene>
+        <!--Input View Controller-->
+        <scene sceneID="qYF-x8-qmp">
+            <objects>
+                <viewController id="L4w-KJ-d5q" customClass="inputViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wTa-0W-m58"/>
+                        <viewControllerLayoutGuide type="bottom" id="O5Q-OO-J2z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rcb-ip-nuR">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMN-pI-BZI">
+                                <rect key="frame" x="310" y="325" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3N5-5F-l7f">
+                                <rect key="frame" x="601" y="172" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRh-D9-eND">
+                                <rect key="frame" x="20" y="172" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2b-JV-1jv">
+                                <rect key="frame" x="310" y="28" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="hidari" destination="xRh-D9-eND" id="G0I-2Z-6X0"/>
+                        <outlet property="migi" destination="3N5-5F-l7f" id="Ttw-Dz-nAm"/>
+                        <outlet property="sita" destination="qMN-pI-BZI" id="Rm0-vQ-QyF"/>
+                        <outlet property="ue" destination="W2b-JV-1jv" id="f2f-jE-NbK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UsR-UZ-4lh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2618" y="-112"/>
         </scene>
         <!--View Controller4-->
         <scene sceneID="sYv-I3-4QG">
@@ -195,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebE-43-cSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="-111"/>
+            <point key="canvasLocation" x="1747" y="-113"/>
         </scene>
         <!--View Controller2-->
         <scene sceneID="UxQ-WY-81J">
@@ -217,9 +265,6 @@
                                 <rect key="frame" x="185" y="107" width="90" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="曲選択に戻る"/>
-                                <connections>
-                                    <segue destination="3dJ-1R-iUR" kind="modal" id="9Bn-71-FpN"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcp-GN-OHg">
                                 <rect key="frame" x="609" y="28" width="30" height="30"/>
@@ -270,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Se7-3p-7Dm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2618" y="-110"/>
+            <point key="canvasLocation" x="2883" y="665"/>
         </scene>
         <!--View Controller3-->
         <scene sceneID="6mS-mE-aCR">
@@ -302,9 +347,6 @@
                                 <rect key="frame" x="201" y="112" width="105" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="曲選択にもどる"/>
-                                <connections>
-                                    <segue destination="3dJ-1R-iUR" kind="modal" id="4ha-DM-371"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKs-TV-OPq" customClass="SKView">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
@@ -329,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0e-8E-Z6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1747" y="-111"/>
+            <point key="canvasLocation" x="2512" y="665"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="H2F-3C-OOK">
@@ -371,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xZ-Tw-sAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="437"/>
+            <point key="canvasLocation" x="884" y="-114"/>
         </scene>
     </scenes>
     <resources>
